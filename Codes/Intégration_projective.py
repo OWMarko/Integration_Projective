@@ -15,7 +15,7 @@ def euler_explicite(f, y0, t0, tf, h):
         y[i] = y[i-1] + h * np.array(f(y[i-1], t[i-1]))
     return t, y
 
-# Intégration projective
+# Intégration projective FAUX
 def integra_proj(f, y0, t0, tf, h, k):
     t = np.arange(t0, tf, h)
     y = np.zeros((len(t), len(y0)))
@@ -25,7 +25,11 @@ def integra_proj(f, y0, t0, tf, h, k):
         for j in range(k):
             yt = yt + (h / k) * f(yt, t[i-1] + j * (h / k))
         y[i] = y[i-1] + h * f(yt, t[i-1])
+        GP = f(yt, t[j-1] + h]
+        yt = 
     return t, y
+
+
 
 # Paramètres intégration proj
 y0 = [1]
