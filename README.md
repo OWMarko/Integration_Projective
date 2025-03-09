@@ -18,7 +18,10 @@ Ce dépôt contient également plusieurs implémentations de techniques d'intég
 
 - **Méthode d'Euler Explicite** 
 - **Méthode d'Euler Implicite** 
-- **Méthode de Runge-Kutta** 
+- **Méthode de Runge-Kutta**
+- **Système de Lorenz** 
+- **Tableau d'erreurs**
+- **Intégration projective**
 - **Graphiques**
 
 ## Utilisation
