@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
-#Notre système d'équations diff raides
+# Notre système d'équations différentielles raides
 def f(y, t):
     return -15 * y
 
-#Euler explicite
+# Euler explicite
 def euler_explicite(f, y0, t0, tf, h):
     t = np.arange(t0, tf, h)
     y = np.zeros((len(t), len(y0)))
@@ -15,7 +15,7 @@ def euler_explicite(f, y0, t0, tf, h):
         y[i] = y[i-1] + h * np.array(f(y[i-1], t[i-1]))
     return t, y
 
-# Intégration projective FAUX
+# Intégration projective
 def integra_proj(f, y0, t0, tf, h, k):
     t = np.arange(t0, tf, h)
     y = np.zeros((len(t), len(y0)))
@@ -29,13 +29,11 @@ def integra_proj(f, y0, t0, tf, h, k):
         y[i] = yt - h * Diff_divise
     return t, y
 
-
-
-# Paramètres intégration proj
+# Paramètres intégration projective
 y0 = [1]
 t0 = 0
 tf = 1
-h = 0.01 #pas
+h = 0.01 # pas
 k = 100 # pas int proj
 
 # Comparaisons et test
@@ -48,8 +46,9 @@ plt.plot(t_exact, y_exact, label='Solution exacte', linestyle='dashed')
 plt.plot(t_euler_exp, y_euler_exp, label='Euler explicite', linestyle='dashed')
 plt.plot(t_projective, y_projective, label='Intégration projective')
 
-#plt.xlim(0, 0.05) bien zoom pour voir diff sur la courbure
-#plt.ylim(0, 1)
+# Zoom sur la courbure
+plt.xlim(0, 0.05)
+plt.ylim(0.1, 1)
 
 plt.xlabel('t')
 plt.ylabel('y(t)')
