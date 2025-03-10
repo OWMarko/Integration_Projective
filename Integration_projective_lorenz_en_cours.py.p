@@ -7,7 +7,7 @@ def lorenz_deriv(x_y_z, t0, sigma=10.0, beta=8./3, rho=28.0):
     return [sigma * (y - x), x * (rho - z) - y, x * y - beta * z]
 
 # Euler explicite
-def euler_explicite(f, y0, t0, tf, h, sigma, beta, rho):
+def euler_explicite(f, y0, t0, tf, h):
     t = np.arange(t0, tf, h)
     y = np.zeros((len(t), len(y0)))
     y[0] = y0
@@ -24,8 +24,8 @@ def integra_proj(f, y0, t0, tf, h, k, sigma, beta, rho):
         yt = y[i-1]
         for j in range(k):
             yt = yt + (h / k) * np.array(f(yt, t[i-1] + j * (h / k), )
-        y[i] = y[i-1] + h * np.array(f(yt, t[i-1], sigma, beta, rho))
-        Diff_divise = (np.array(f(yt, t[i-1] + h, sigma, beta, rho)) - np.array(f(yt, t[i-1], ))) / h
+        y[i] = y[i-1] + h * np.array(f(yt, t[i-1], ))
+        Diff_divise = (np.array(f(yt, t[i-1] + h, )) - np.array(f(yt, t[i-1], ))) / h
         y[i] = yt - h * Diff_divise
     return t, y
 
