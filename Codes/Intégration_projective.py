@@ -26,7 +26,7 @@ def integra_proj(f, y0, t0, tf, h, k):
             yt = yt + (h / k) * f(yt, t[i-1] + j * (h / k))
         y[i] = y[i-1] + h * f(yt, t[i-1])
         Diff_divise = (f(yt, t[i-1] + h) - f(yt, t[i-1])) / h
-        y[i] = yt - h * Diff_divisé
+        y[i] = yt - h * Diff_divise
     return t, y
 
 
