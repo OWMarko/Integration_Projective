@@ -1,11 +1,5 @@
 #include <iostream>
-#include <vector>
-
-
-#include <iostream>
-#include <cmath>
-#include <functional>
-
+include <cmath>
 double f(double t, double x) {
     return -3 * x;
 }
