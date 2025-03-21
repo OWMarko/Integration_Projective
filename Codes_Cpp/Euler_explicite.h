@@ -2,10 +2,6 @@
 #include <vector>
 #include <functional>
 
-#include <iostream>
-#include <vector>
-#include <functional>
-
 std::pair<std::vector<double>, std::vector<double>> eulerExplicite(
     double x0, 
     std::function<double(double, double)> f, 
