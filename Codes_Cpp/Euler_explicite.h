@@ -16,14 +16,4 @@ void EulerExplicite(double x0, double T, int N) {
     for (int i = 0; i < N; ++i) {
         std::cout << "t[" << i << "] = " << t[i] << ", x[" << i << "] = " << x[i] << std::endl;
     }
-}
 
-int main() {
-    double x0 = 1.0; // Condition initiale
-    double T = 10.0; // Temps total
-    int N = 10; // Nombre de points
-    
-    EulerExplicite(x0, T, N); // Appel de la fonction
-    
-    return 0;
-}
