@@ -1,5 +1,5 @@
 #include <iostream>
-include <cmath>
+#include <cmath>
 double f(double t, double x) {
     return -3 * x;
 }
