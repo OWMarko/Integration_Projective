@@ -26,19 +26,18 @@ double Newton(double x0, std::function<double(double, double)> f, int itermax,
     double normeres = normeres0;
     int iter0 = 0;
 
-    while (iter0 < itermax && normeres > epsrel * normeres0 + epsabs) {
-        iter0++;
-        double deriveG = 1 - dt * derivef(t, y);
+while (iter0 < itermax && normeres > epsrel * normeres0 + epsabs) {
+        iter0++; 
+        double deriveG = 1 - dt * derivef(t, y); 
         
-        if (std::fabs(deriveG) <= std::numeric_limits<double>::epsilon()) {
-            std::cout << "La dérivée est nulle" << std::endl;
+        if (std::abs(deriveG) < 1e-10) {
+            std::cout << "La dérivée est trop proche de zéro, méthode arrêtée." << std::endl;
             break;
         }
 
-        fG = fonctionG(y, x, t, dt, f);
         y = y - fG / deriveG;
-        fG = fonctionG(y, x, t, dt, f);
-        normeres = std::fabs(fG);
+        fG = fonctionG(y, x, t, dt); 
+        normeres = std::abs(fG); 
     }
 
     return y;
