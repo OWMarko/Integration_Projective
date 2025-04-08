@@ -1,1 +1,9 @@
 - mettre à jour le doc (MàJ partie num, étude stab, expliquer int proj bien avec dessin) 
+
+- améliorer dossier code
+
+- bien orga images 
+
+- étude erreurs intégration projective
+
+- expliquer brusselator 
