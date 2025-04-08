@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     QPushButton *button4 = new QPushButton("In comming");
 
     QLabel *logo = new QLabel();
-    logo->setPixmap(QPixmap(":/logo.png")); 
+    logo->setPixmap(QPixmap("Application/Images/logo.png")); 
     logo->setAlignment(Qt::AlignRight);
 
     QLabel *copyright = new QLabel("© 2025 SINADINOVIC Marko - Tous droits réservés");
