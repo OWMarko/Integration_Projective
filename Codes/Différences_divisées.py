@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def diffdiv(x, y):
     n =  len(x)
     F = np.zeros((n, n))
