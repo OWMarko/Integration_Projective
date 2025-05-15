@@ -30,7 +30,26 @@ def integra_proj(f, y0, t0, tf, h, k):
     return t, y
 
 #PFE
-
+def pfe (f, y0, t0, tf, h_micro, K, T_macro):\n
+    y0 = np.array(y0, dtype=float)  #on vectorise la condition initial\n",
+    n= len(y0)\n",
+    dt_global =  K * h_micro + T_macro # delta temps entre chaque iteration pfe\n",
+    N= int(np.floor((tf - t0) / dt_global)) # calcule le nombre exact d'iteration pfe (on peut ajouter une derniere iteration avec pas ajuster pour finir exactement a tf *non fait ici*)\n",
+    y_f=np.zeros((N,n))\n",
+    t_f = np.zeros(N)\n",
+    y_f[0]= y0\n",
+    t_f[0]= t0\n",
+    for i in range (1,N)
+        yt=y_f[i-1].copy()
+        for j in range(1,K):
+               yt= yt + h_micro*f(yt,t_f[i-1] + j*h_micro)
+               yt_2 = yt +  h_micro*f(yt,t_f[i-1] + K*h_micro)
+               pente = (yt_2 - yt)/h_micro
+               y_proj = yt_2 + (T_macro - (K + 1) * h_micro) * pente
+               y_f[i] = y_proj\n",
+               t_f[i] = t_f[i - 1] + dt_global\n",
+        return t_f, y_f
+        
 #Paramètres intégration projective
 y0 = [1]
 t0 = 0
